@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食材图片画廊 - 前100个</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .item {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        
+        .item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            background-color: #f1f2f6;
+        }
+        
+        .item-name {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            text-transform: capitalize;
+        }
+        
+        .item-category {
+            color: #7f8c8d;
+            font-size: 0.8rem;
+            background-color: #ecf0f1;
+            padding: 3px 8px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        
+        .stats {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #7f8c8d;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1024px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            body {
+                padding: 15px;
+            }
+        }
+        
+        /* 加载动画 */
+        .item img {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* 错误处理 */
+        .item img[src=""], .item img:not([src]) {
+            background-color: #ecf0f1;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' font-family='Arial' font-size='12' fill='%23bdc3c7' text-anchor='middle' dy='.3em'%3E图片加载中...%3C/text%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🍽️ 食材图片画廊</h1>
+        <p>精选前100个高质量食材图片</p>
+    </div>
+    
+    <div class="stats">
+        <p>共展示 <strong>100</strong> 个食材</p>
+    </div>
+    
+    <div class="gallery">
+        <div class="item" style="animation-delay: 0.0s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/spinach.png?x-oss-process=image/resize,w_240" alt="spinach" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">spinach</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.05s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/lettuce.png?x-oss-process=image/resize,w_240" alt="lettuce" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">lettuce</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.1s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/kale.png?x-oss-process=image/resize,w_240" alt="kale" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">kale</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.15000000000000002s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/bok_choy.png?x-oss-process=image/resize,w_240" alt="bok choy" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">bok choy</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.2s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/potato.png?x-oss-process=image/resize,w_240" alt="potato" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">potato</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.25s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/carrot.png?x-oss-process=image/resize,w_240" alt="carrot" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">carrot</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.30000000000000004s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/radish.png?x-oss-process=image/resize,w_240" alt="radish" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">radish</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.35000000000000003s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/ginger.png?x-oss-process=image/resize,w_240" alt="ginger" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">ginger</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.4s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/garlic.png?x-oss-process=image/resize,w_240" alt="garlic" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">garlic</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.45s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/tomato.png?x-oss-process=image/resize,w_240" alt="tomato" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">tomato</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.5s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/cucumber.png?x-oss-process=image/resize,w_240" alt="cucumber" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">cucumber</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.55s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/zucchini.png?x-oss-process=image/resize,w_240" alt="zucchini" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">zucchini</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.6000000000000001s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/pumpkin.png?x-oss-process=image/resize,w_240" alt="pumpkin" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">pumpkin</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.65s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/green_beans.png?x-oss-process=image/resize,w_240" alt="green beans" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">green beans</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.7000000000000001s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/peas.png?x-oss-process=image/resize,w_240" alt="peas" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">peas</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.75s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/edamame.png?x-oss-process=image/resize,w_240" alt="edamame" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">edamame</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.8s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/shiitake_mushroom.png?x-oss-process=image/resize,w_240" alt="shiitake mushroom" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">shiitake mushroom</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.8500000000000001s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/button_mushroom.png?x-oss-process=image/resize,w_240" alt="button mushroom" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">button mushroom</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.9s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/broccoli.png?x-oss-process=image/resize,w_240" alt="broccoli" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">broccoli</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 0.9500000000000001s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/cauliflower.png?x-oss-process=image/resize,w_240" alt="cauliflower" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">cauliflower</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.0s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/bell_pepper.png?x-oss-process=image/resize,w_240" alt="bell pepper" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">bell pepper</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.05s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/eggplant.png?x-oss-process=image/resize,w_240" alt="eggplant" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">eggplant</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.1s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/onion.png?x-oss-process=image/resize,w_240" alt="onion" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">onion</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.1500000000000001s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/cherry_tomato.png?x-oss-process=image/resize,w_240" alt="cherry tomato" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">cherry tomato</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.2000000000000002s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/sweet_potato.png?x-oss-process=image/resize,w_240" alt="sweet potato" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">sweet potato</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.25s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/leek.png?x-oss-process=image/resize,w_240" alt="leek" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">leek</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.3s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/celery.png?x-oss-process=image/resize,w_240" alt="celery" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">celery</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.35s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/fennel_bulb.png?x-oss-process=image/resize,w_240" alt="fennel bulb" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">fennel bulb</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.4000000000000001s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/turnip.png?x-oss-process=image/resize,w_240" alt="turnip" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">turnip</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.4500000000000002s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/lotus_root.png?x-oss-process=image/resize,w_240" alt="lotus root" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">lotus root</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.5s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/okra.png?x-oss-process=image/resize,w_240" alt="okra" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">okra</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.55s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/water_chestnut.png?x-oss-process=image/resize,w_240" alt="water chestnut" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">water chestnut</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.6s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/bamboo_shoot.png?x-oss-process=image/resize,w_240" alt="bamboo shoot" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">bamboo shoot</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.6500000000000001s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/beetroot.png?x-oss-process=image/resize,w_240" alt="beetroot" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">beetroot</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.7000000000000002s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/brussels_sprouts.png?x-oss-process=image/resize,w_240" alt="brussels sprouts" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">brussels sprouts</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.75s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/sea_asparagus.png?x-oss-process=image/resize,w_240" alt="sea asparagus" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">sea asparagus</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.8s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/endive.png?x-oss-process=image/resize,w_240" alt="endive" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">endive</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.85s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/artichoke.png?x-oss-process=image/resize,w_240" alt="artichoke" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">artichoke</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.9000000000000001s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/blueberry.png?x-oss-process=image/resize,w_240" alt="blueberry" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">blueberry</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 1.9500000000000002s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/grape.png?x-oss-process=image/resize,w_240" alt="grape" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">grape</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.0s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/strawberry.png?x-oss-process=image/resize,w_240" alt="strawberry" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">strawberry</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.0500000000000003s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/raspberry.png?x-oss-process=image/resize,w_240" alt="raspberry" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">raspberry</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.1s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/blackberry.png?x-oss-process=image/resize,w_240" alt="blackberry" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">blackberry</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.15s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/goji_berry.png?x-oss-process=image/resize,w_240" alt="goji berry" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">goji berry</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.2s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/arugula.png?x-oss-process=image/resize,w_240" alt="arugula" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">arugula</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.25s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/watercress.png?x-oss-process=image/resize,w_240" alt="watercress" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">watercress</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.3000000000000003s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/parsley_root.png?x-oss-process=image/resize,w_240" alt="parsley root" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">parsley root</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.35s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/parsnip.png?x-oss-process=image/resize,w_240" alt="parsnip" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">parsnip</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.4000000000000004s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/yam.png?x-oss-process=image/resize,w_240" alt="yam" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">yam</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.45s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/plantain.png?x-oss-process=image/resize,w_240" alt="plantain" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">plantain</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.5s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/cassava.png?x-oss-process=image/resize,w_240" alt="cassava" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">cassava</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.5500000000000003s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/chayote.png?x-oss-process=image/resize,w_240" alt="chayote" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">chayote</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.6s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/radicchio.png?x-oss-process=image/resize,w_240" alt="radicchio" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">radicchio</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.6500000000000004s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/shallot.png?x-oss-process=image/resize,w_240" alt="shallot" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">shallot</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.7s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/spring_onion.png?x-oss-process=image/resize,w_240" alt="spring onion" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">spring onion</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.75s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/snow_pea.png?x-oss-process=image/resize,w_240" alt="snow pea" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">snow pea</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.8000000000000003s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/mung_bean_sprout.png?x-oss-process=image/resize,w_240" alt="mung bean sprout" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">mung bean sprout</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.85s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/alfalfa_sprout.png?x-oss-process=image/resize,w_240" alt="alfalfa sprout" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">alfalfa sprout</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.9000000000000004s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/endive.png?x-oss-process=image/resize,w_240" alt="endive" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">endive</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 2.95s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/celeriac.png?x-oss-process=image/resize,w_240" alt="celeriac" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">celeriac</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.0s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/daikon.png?x-oss-process=image/resize,w_240" alt="daikon" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">daikon</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.0500000000000003s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/kohlrabi.png?x-oss-process=image/resize,w_240" alt="kohlrabi" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">kohlrabi</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.1s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/mizuna.png?x-oss-process=image/resize,w_240" alt="mizuna" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">mizuna</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.1500000000000004s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/tatsoi.png?x-oss-process=image/resize,w_240" alt="tatsoi" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">tatsoi</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.2s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/collard_greens.png?x-oss-process=image/resize,w_240" alt="collard greens" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">collard greens</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.25s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/mustard_greens.png?x-oss-process=image/resize,w_240" alt="mustard greens" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">mustard greens</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.3000000000000003s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/purslane.png?x-oss-process=image/resize,w_240" alt="purslane" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">purslane</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.35s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/sorrel.png?x-oss-process=image/resize,w_240" alt="sorrel" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">sorrel</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.4000000000000004s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/cabbage.png?x-oss-process=image/resize,w_240" alt="cabbage" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">cabbage</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.45s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/napa_cabbage.png?x-oss-process=image/resize,w_240" alt="napa cabbage" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">napa cabbage</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.5s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/romaine_lettuce.png?x-oss-process=image/resize,w_240" alt="romaine lettuce" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">romaine lettuce</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.5500000000000003s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/iceberg_lettuce.png?x-oss-process=image/resize,w_240" alt="iceberg lettuce" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">iceberg lettuce</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.6s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/chicory.png?x-oss-process=image/resize,w_240" alt="chicory" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">chicory</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.6500000000000004s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/broccolini.png?x-oss-process=image/resize,w_240" alt="broccolini" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">broccolini</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.7s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/rapini.png?x-oss-process=image/resize,w_240" alt="rapini" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">rapini</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.75s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/swiss_chard.png?x-oss-process=image/resize,w_240" alt="swiss chard" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">swiss chard</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.8000000000000003s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/dandelion_greens.png?x-oss-process=image/resize,w_240" alt="dandelion greens" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">dandelion greens</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.85s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/turnip_greens.png?x-oss-process=image/resize,w_240" alt="turnip greens" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">turnip greens</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.9000000000000004s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/scallion.png?x-oss-process=image/resize,w_240" alt="scallion" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">scallion</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 3.95s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/leek.png?x-oss-process=image/resize,w_240" alt="leek" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">leek</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.0s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/garlic_scape.png?x-oss-process=image/resize,w_240" alt="garlic scape" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">garlic scape</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.05s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/okra_flower.png?x-oss-process=image/resize,w_240" alt="okra flower" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">okra flower</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.1000000000000005s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/taro_root.png?x-oss-process=image/resize,w_240" alt="taro root" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">taro root</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.15s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/yam_bean.png?x-oss-process=image/resize,w_240" alt="yam bean" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">yam bean</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.2s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/salsify.png?x-oss-process=image/resize,w_240" alt="salsify" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">salsify</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.25s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/jerusalem_artichoke.png?x-oss-process=image/resize,w_240" alt="jerusalem artichoke" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">jerusalem artichoke</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.3s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/lotus_seed.png?x-oss-process=image/resize,w_240" alt="lotus seed" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">lotus seed</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.3500000000000005s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/pumpkin_seed.png?x-oss-process=image/resize,w_240" alt="pumpkin seed" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">pumpkin seed</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.4s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/sunflower_seed.png?x-oss-process=image/resize,w_240" alt="sunflower seed" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">sunflower seed</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.45s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/radish_sprout.png?x-oss-process=image/resize,w_240" alt="radish sprout" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">radish sprout</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.5s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/pea_shoot.png?x-oss-process=image/resize,w_240" alt="pea shoot" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">pea shoot</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.55s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/bean_sprout.png?x-oss-process=image/resize,w_240" alt="bean sprout" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">bean sprout</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.6000000000000005s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/bamboo_leaf.png?x-oss-process=image/resize,w_240" alt="bamboo leaf" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">bamboo leaf</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.65s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/lemongrass.png?x-oss-process=image/resize,w_240" alt="lemongrass" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">lemongrass</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.7s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/galangal_root.png?x-oss-process=image/resize,w_240" alt="galangal root" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">galangal root</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.75s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/apple.png?x-oss-process=image/resize,w_240" alt="apple" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">apple</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.800000000000001s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/pear.png?x-oss-process=image/resize,w_240" alt="pear" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">pear</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.8500000000000005s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/banana.png?x-oss-process=image/resize,w_240" alt="banana" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">banana</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.9s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/mango.png?x-oss-process=image/resize,w_240" alt="mango" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">mango</div>
+            <div class="item-category">vegetables</div>
+        </div>
+        <div class="item" style="animation-delay: 4.95s;">
+            <img src="https://rtaicookbook.oss-cn-hongkong.aliyuncs.com/generated_images/pineapple.png?x-oss-process=image/resize,w_240" alt="pineapple" loading="lazy" 
+                 onerror="this.style.backgroundImage='url(data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ctext x=\'50\' y=\'50\' font-family=\'Arial\' font-size=\'12\' fill=\'%23e74c3c\' text-anchor=\'middle\' dy=\'.3em\'%3E加载失败%3C/text%3E%3C/svg%3E)'; this.style.backgroundColor='#fadbd8';">
+            <div class="item-name">pineapple</div>
+            <div class="item-category">vegetables</div>
+        </div>
+    </div>
+    
+    <script>
+        // 图片懒加载优化
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+        
+        // 添加点击放大功能
+        document.querySelectorAll('.item img').forEach(img => {
+            img.addEventListener('click', function() {
+                const modal = document.createElement('div');
+                modal.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.8);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 1000;
+                    cursor: pointer;
+                `;
+                
+                const modalImg = document.createElement('img');
+                modalImg.src = this.src.replace('w_240', 'w_800');
+                modalImg.style.cssText = `
+                    max-width: 90%;
+                    max-height: 90%;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                `;
+                
+                modal.appendChild(modalImg);
+                document.body.appendChild(modal);
+                
+                modal.addEventListener('click', () => {
+                    document.body.removeChild(modal);
+                });
+            });
+        });
+        
+        console.log('食材图片画廊加载完成！共展示 {len(items)} 个食材');
+    </script>
+</body>
+</html>
